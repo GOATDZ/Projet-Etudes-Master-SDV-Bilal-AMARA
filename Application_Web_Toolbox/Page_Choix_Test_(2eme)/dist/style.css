@@ -1,0 +1,102 @@
+#page-structure {
+    display: none; /* Assurez-vous que la page initiale est masquée */
+}
+  
+#blue-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Ajouter cette ligne pour empiler le texte et les boutons verticalement */
+    height: 100vh;
+    background-color: #377ec0;
+    padding: 20px; /* Ajout de padding pour plus d'espace autour des boutons */
+}
+  
+/* Styles pour les boutons et le texte */
+.button-container {
+    text-align: center; /* Centrer le contenu dans la boîte */
+    margin-top: 50px; /* Réduit la marge supérieure */
+    padding: 20px; /* Ajout de padding au conteneur */
+    width: 100%; /* S'assurer que le conteneur prend toute la largeur */
+    box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+}
+  
+.test-mode-text {
+    text-transform: uppercase;
+    font-family: "Orbitron", sans-serif; /* Définir la même police */
+    font-size: 35px; /* Taille de police adaptée */
+    font-weight: bold; /* Police en gras */
+    color: #ffffff; /* Couleur du texte */
+    margin-bottom: 60px; /* Espace entre le texte et les boutons */
+}
+
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px; /* Utiliser les mêmes valeurs de padding */
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+    font-family: "Orbitron", sans-serif; /* Définir la même police */
+    font-size: 35px; /* Taille de police adaptée */
+    font-weight: bold; /* Police en gras */
+    margin: 10px;
+    position: relative; /* Ajout d'une position relative pour le pseudo-élément */
+    box-sizing: border-box; /* Assurez-vous que le padding est inclus dans la taille totale */
+    color: #777; /* Couleur du texte par défaut */
+}
+
+.btn-black {
+    background-color: #000;
+    color: #fff; /* Couleur du texte en blanc pour le bouton noir */
+}
+
+.btn-grey {
+    background-color: #808080;
+    color: #fff; /* Couleur du texte en blanc pour le bouton gris */
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777; /* Couleur du texte en gris pour le bouton blanc */
+}
+  
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+  
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+  
+.btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.btn-black::after {
+    background-color: #000;
+}
+
+.btn-grey::after {
+    background-color: #808080;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+  
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}

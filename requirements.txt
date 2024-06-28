@@ -1,0 +1,11 @@
+colorama
+googlesearch-python
+python-nmap
+requests
+paramiko
+scapy
+fpdf
+geoip2
+flask
+whois
+jinja2

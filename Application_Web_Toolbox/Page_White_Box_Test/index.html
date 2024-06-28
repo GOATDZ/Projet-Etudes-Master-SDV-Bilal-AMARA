@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test White Box</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu">
+        <h3 onclick="resetContent()">Menu</h3>
+        <button onclick="showContent('Gestion Mot de passe')">Gestion Mot de passe</button>
+        <button onclick="showContent('Bruteforce')">Bruteforce</button>
+        <button onclick="showContent('Rapport')">Rapport</button>
+    </div>
+    <div class="content" id="content">
+        <!-- Le contenu sera affiché ici -->
+    </div>
+    <script>
+        function showContent(title) {
+            let contentDiv = document.getElementById('content');
+            let content = `
+                <div class="window">
+                    <div class="title-bar">
+                        <div class="title-bar-text">${title}</div>
+                        <div class="title-bar-controls">
+                            <button class="minimize" aria-label="Minimize"></button>
+                            <button class="maximize" aria-label="Maximize"></button>
+                            <button class="close" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body"></div>
+                </div>
+            `;
+            contentDiv.innerHTML = content;
+        }
+
+        function resetContent() {
+            document.getElementById('content').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
